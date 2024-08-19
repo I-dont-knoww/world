@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: monospace;
+        }
+
+        .popup {
+            position: fixed;
+
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+
+            padding: 1em;
+
+            border: 1px solid black;
+            background-color: white;
+        }
+    </style>
+
+    <title>World</title>
+</head>
+<body>
+    <script type="module" src="./headers.mjs"></script>
+    <script type="module" src="./utils/textDecoderAndEncoder.mjs"></script>
+    <script type="module" src="./client/eventemitter.js"></script>
+    <script type="module" src="./client/connection.js"></script>
+    <script type="module" src="./client/index.js"></script>
+
+    <div class="popup" id="startMenu">
+        <h1>Would you like to host a game or join a game?</h1>
+        <button id="hostButton">Host Game</button>
+        <br>
+        <input id="joinCodeInput">
+        <button id="joinButton">Join Game</button>
+    </div>
+
+    <div class="popup" id="hostMenu">
+        <h1>Host Game</h1>
+        <h3 id="lobbyCode"></h3>
+        <button id="startGameButton">Start Game</button>
+    </div>
+
+    <div class="popup" id="joinMenu">
+        <h1 id="joinInformation">Waiting for host to start game...</h1>
+    </div>
+
+    <canvas></canvas>
+</body>
+</html>
